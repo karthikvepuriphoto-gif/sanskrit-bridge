@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Shabda Latin";
+  src: url("./assets/fonts/noto-sans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Shabda Latin";
+  src: url("./assets/fonts/noto-sans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Outfit", "Shabda Latin", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Shabda Latin", Georgia, serif;
+  --font-deva: "Noto Serif Devanagari", serif;
+  --font-telugu: "Noto Sans Telugu", sans-serif;
+  --font-iast: "Shabda Latin", "Outfit", sans-serif;
+  --color-ivory: #f6f0e6;
+  --color-paper: #fffdfb;
+  --color-ink: #1c1733;
+  --color-indigo: #24315c;
+  --color-indigo-soft: #3d4e86;
+  --color-saffron: #e08a3a;
+  --color-saffron-deep: #b85f16;
+  --color-cream: #f8efe2;
+  --color-mist: #e6dfd2;
+  --color-clay: #8d4538;
+  --color-sage: #1d7a4d;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #12182f;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #f3d2a4;
+}
+
+:focus-visible {
+  outline: 3px solid #e08a3a;
+  outline-offset: 3px;
+}
+
+.mixed {
+  font-family: "Shabda Latin", "Noto Serif Devanagari", "Noto Sans Telugu", sans-serif;
+}
+
+.rise {
+  animation: rise 0.45s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .pulse-ring {
+    animation: none;
+  }
+}
